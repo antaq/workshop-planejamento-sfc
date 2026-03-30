@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Balanço 2025 — Principais Entregas</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden; background:#ffffff; }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+.text-brand { color:#003366; }
+.bg-brand { background-color:#003366; }
+.text-accent { color:#0066CC; }
+.bg-accent { background-color:#0066CC; }
+.header-bar { height:10px; background:#003366; width:100%; }
+.secondary-bar { height:4px; background:#0066CC; width:100%; }
+
+.stat-card {
+  background: linear-gradient(135deg, #003366, #004d99);
+  border-radius: 16px;
+  padding: 36px 24px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::after {
+  content: '';
+  position: absolute; top: -30px; right: -30px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.06);
+}
+.stat-num {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 900;
+  font-size: 72px;
+  line-height: 1;
+}
+.delivery-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px;
+  background: #F8FAFC;
+  border-radius: 14px;
+  border-left: 5px solid #0066CC;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="header-bar"></div>
+  <div class="secondary-bar"></div>
+
+  <!-- Header -->
+  <div class="px-16 pt-10 pb-4">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:44px;" class="bg-accent"></div>
+      <div>
+        <p class="font-montserrat font-bold text-gray-400 text-lg uppercase tracking-widest">Balanço 2025</p>
+        <p class="text-5xl font-montserrat font-bold text-brand uppercase tracking-tight">Principais Entregas</p>
+      </div>
+      <div class="ml-auto flex items-center gap-2">
+        <img src="assets/logo-antaq-azul.png" alt="ANTAQ" style="height:32px;">
+        <p class="font-montserrat font-bold text-gray-400 text-sm tracking-widest">SFC</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats Row -->
+  <div class="px-16 pb-6 grid grid-cols-4 gap-5">
+    <div class="stat-card">
+      <p class="stat-num">5</p>
+      <p class="text-blue-200 text-xl font-semibold mt-3">Autoridades Portuárias<br/>Avaliadas</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num">4</p>
+      <p class="text-blue-200 text-xl font-semibold mt-3">Portos Fiscalizados<br/>(Convênios)</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num">5</p>
+      <p class="text-blue-200 text-xl font-semibold mt-3">Terminais de Contêineres<br/>Analisados</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-num">2</p>
+      <p class="text-blue-200 text-xl font-semibold mt-3">GEFs Constituídos<br/>(Investimentos e Contêineres)</p>
+    </div>
+  </div>
+
+  <!-- Deliveries Grid -->
+  <div class="flex-1 px-16 pb-6 grid grid-cols-2 gap-6">
+    <div class="delivery-item">
+      <div class="w-14 h-14 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-check text-green-600"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-2xl">Fiscalizações Temáticas Concluídas</p>
+        <p class="text-gray-600 text-xl mt-3">Desempenho e Estrutura de Fiscalização das APs, Diagnóstico de Convênios de Delegação, Preço em Terminais de Contêineres.</p>
+      </div>
+    </div>
+    <div class="delivery-item">
+      <div class="w-14 h-14 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-check text-green-600"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-2xl">Grupos Especializados de Fiscalização</p>
+        <p class="text-gray-600 text-xl mt-3">GEF Investimentos e GEF Contêineres formalizados — equipes dedicadas para acompanhamento técnico contínuo.</p>
+      </div>
+    </div>
+    <div class="delivery-item">
+      <div class="w-14 h-14 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-cogs text-accent"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-2xl">Metodologias em Desenvolvimento</p>
+        <p class="text-gray-600 text-xl mt-3">Metodologia de Contratos de Arrendamento, Manuais de Fiscalização Conjunta das APs e Manual de Tomada de Contas iniciados.</p>
+      </div>
+    </div>
+    <div class="delivery-item">
+      <div class="w-14 h-14 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-laptop-code text-accent"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-2xl">Avanço em Sistemas de TI</p>
+        <p class="text-gray-600 text-xl mt-3">Início da concepção do SisPAT (Inventário de Bens e Bens Reversíveis) e levantamento de requisitos para SAI (Acompanhamento de Investimentos).</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="px-16 pb-6 flex justify-between items-center border-t border-gray-100 pt-4 mx-8">
+    <p class="text-gray-400 text-sm">Workshop de Planejamento ANTAQ 2026 — SFC</p>
+    <p class="text-gray-300 text-sm font-mono">3 / 14</p>
+  </div>
+</div>
+</body>
+</html>

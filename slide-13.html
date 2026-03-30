@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Desafio — Navegação Interior</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<style>
+body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif; }
+.slide { width:100vw; height:100vh; position:relative; display:flex; flex-direction:column; overflow:hidden;
+  background: linear-gradient(135deg, #0c2a1a 0%, #1a3a2a 40%, #0d4a3a 100%); }
+.font-montserrat { font-family:'Montserrat',sans-serif; }
+
+.location-card {
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.location-card .card-img {
+  height: 240px;
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.location-card .card-img .placeholder-label {
+  color: rgba(255,255,255,0.25);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.location-card .card-body {
+  padding: 28px 32px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.location-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 14px; border-radius: 20px; font-size: 13px;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.challenge-pill {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 6px 14px;
+  font-size: 14px;
+  color: #94A3B8;
+  font-weight: 600;
+}
+</style>
+</head>
+<body>
+<div class="slide">
+  <!-- Decorative elements -->
+  <div class="absolute top-0 left-0 w-96 h-96 rounded-full opacity-5" style="background: radial-gradient(circle, #22C55E 0%, transparent 70%); transform: translate(-30%, -30%);"></div>
+  <div class="absolute bottom-0 right-0 w-80 h-80 rounded-full opacity-5" style="background: radial-gradient(circle, #0EA5E9 0%, transparent 70%); transform: translate(30%, 30%);"></div>
+
+  <!-- Green top accent -->
+  <div style="height:6px; background: linear-gradient(90deg, #22C55E, #0EA5E9); width:100%;"></div>
+
+  <!-- Header -->
+  <div class="px-16 pt-10 pb-4 relative z-10">
+    <div class="flex items-center gap-3">
+      <div style="width:5px;height:50px; background:#22C55E;"></div>
+      <div>
+        <p class="font-montserrat font-bold text-green-400 text-xl uppercase tracking-widest">Desafio Estratégico</p>
+        <p class="text-5xl font-montserrat font-black text-white uppercase tracking-tight">Navegação Interior</p>
+      </div>
+      <div class="ml-auto flex items-center gap-3">
+        <img src="assets/logo-antaq-branca.png" alt="ANTAQ" style="height:36px;">
+      </div>
+    </div>
+    <p class="text-gray-400 text-xl mt-3 ml-2 max-w-4xl">Fiscalização nas fronteiras mais remotas do Brasil — onde o transporte aquaviário é o <strong class="text-white">único meio de acesso</strong> para milhares de cidadãos.</p>
+  </div>
+
+  <!-- Three location cards -->
+  <div class="flex-1 px-16 pb-6 relative z-10 flex gap-8">
+
+    <!-- Oiapoque -->
+    <div class="location-card">
+      <div class="card-img">
+        <!-- PLACEHOLDER: Substituir por imagem real de Oiapoque -->
+        <div class="flex flex-col items-center gap-3">
+          <i class="fas fa-image text-4xl" style="color: rgba(255,255,255,0.15);"></i>
+          <p class="placeholder-label">Inserir foto: Oiapoque</p>
+        </div>
+        <div class="absolute top-4 left-4">
+          <span class="location-badge" style="background:rgba(34,197,94,0.2); color:#4ADE80;"><i class="fas fa-map-marker-alt"></i> AP</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="font-montserrat font-black text-white text-2xl mb-1">Oiapoque</p>
+        <p class="text-green-300 font-montserrat font-semibold text-base mb-3">Fronteira com a Guiana Francesa</p>
+        <p class="text-gray-400 text-lg leading-relaxed mb-4">Travessia fluvial internacional pelo Rio Oiapoque — única conexão entre Brasil e Guiana Francesa por via aquaviária.</p>
+        <div class="flex flex-wrap gap-2 mt-auto">
+          <span class="challenge-pill"><i class="fas fa-water text-green-400"></i> Rio Oiapoque</span>
+          <span class="challenge-pill"><i class="fas fa-passport text-blue-400"></i> Fronteira internacional</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Guajará-Mirim -->
+    <div class="location-card">
+      <div class="card-img">
+        <!-- PLACEHOLDER: Substituir por imagem real de Guajará-Mirim -->
+        <div class="flex flex-col items-center gap-3">
+          <i class="fas fa-image text-4xl" style="color: rgba(255,255,255,0.15);"></i>
+          <p class="placeholder-label">Inserir foto: Guajará-Mirim</p>
+        </div>
+        <div class="absolute top-4 left-4">
+          <span class="location-badge" style="background:rgba(14,165,233,0.2); color:#38BDF8;"><i class="fas fa-map-marker-alt"></i> RO</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="font-montserrat font-black text-white text-2xl mb-1">Guajará-Mirim</p>
+        <p class="text-blue-300 font-montserrat font-semibold text-base mb-3">Fronteira com a Bolívia</p>
+        <p class="text-gray-400 text-lg leading-relaxed mb-4">Travessia pelo Rio Mamoré conectando Brasil e Bolívia — rota essencial para comércio e deslocamento de comunidades ribeirinhas.</p>
+        <div class="flex flex-wrap gap-2 mt-auto">
+          <span class="challenge-pill"><i class="fas fa-water text-blue-400"></i> Rio Mamoré</span>
+          <span class="challenge-pill"><i class="fas fa-passport text-green-400"></i> Fronteira internacional</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabatinga -->
+    <div class="location-card">
+      <div class="card-img">
+        <!-- PLACEHOLDER: Substituir por imagem real de Tabatinga -->
+        <div class="flex flex-col items-center gap-3">
+          <i class="fas fa-image text-4xl" style="color: rgba(255,255,255,0.15);"></i>
+          <p class="placeholder-label">Inserir foto: Tabatinga</p>
+        </div>
+        <div class="absolute top-4 left-4">
+          <span class="location-badge" style="background:rgba(251,191,36,0.2); color:#FCD34D;"><i class="fas fa-map-marker-alt"></i> AM</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="font-montserrat font-black text-white text-2xl mb-1">Tabatinga</p>
+        <p class="text-yellow-300 font-montserrat font-semibold text-base mb-3">Tríplice fronteira — Colômbia e Peru</p>
+        <p class="text-gray-400 text-lg leading-relaxed mb-4">Navegação no Rio Solimões na tríplice fronteira — ponto estratégico para passageiros e cargas na Amazônia Ocidental.</p>
+        <div class="flex flex-wrap gap-2 mt-auto">
+          <span class="challenge-pill"><i class="fas fa-water text-yellow-400"></i> Rio Solimões</span>
+          <span class="challenge-pill"><i class="fas fa-passport text-yellow-400"></i> Tríplice fronteira</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="relative z-10 px-16 pb-6 flex justify-between items-center border-t border-gray-700 pt-4 mx-8">
+    <p class="text-gray-500 text-sm">Workshop de Planejamento ANTAQ 2026 — SFC</p>
+    <p class="text-gray-500 text-sm font-mono">13 / 14</p>
+  </div>
+</div>
+</body>
+</html>
