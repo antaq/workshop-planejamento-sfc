@@ -45,8 +45,8 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 .delivery-item {
   display: flex;
   align-items: flex-start;
-  gap: 20px;
-  padding: 28px;
+  gap: 16px;
+  padding: 20px 24px;
   background: #F8FAFC;
   border-radius: 14px;
   border-left: 5px solid #0066CC;
@@ -74,7 +74,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
   </div>
 
   <!-- Stats Row -->
-  <div class="px-16 pb-6 grid grid-cols-4 gap-5">
+  <div class="px-16 pb-4 grid grid-cols-4 gap-5">
     <div class="stat-card">
       <p class="stat-num">5</p>
       <p class="text-blue-200 text-xl font-semibold mt-3">Autoridades Portuárias<br/>Avaliadas</p>
@@ -94,14 +94,14 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
   </div>
 
   <!-- Deliveries Grid -->
-  <div class="flex-1 px-16 pb-6 grid grid-cols-2 gap-6">
+  <div class="flex-1 px-16 pb-4 grid grid-cols-2 gap-4 auto-rows-fr">
     <div class="delivery-item">
       <div class="w-14 h-14 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
         <i class="fas fa-check text-green-600"></i>
       </div>
       <div>
-        <p class="font-montserrat font-bold text-brand text-2xl">Fiscalizações Temáticas Concluídas</p>
-        <p class="text-gray-600 text-xl mt-3">Desempenho e Estrutura de Fiscalização das APs, Diagnóstico de Convênios de Delegação, Preço em Terminais de Contêineres.</p>
+        <p class="font-montserrat font-bold text-brand text-xl">Fiscalizações Temáticas Concluídas</p>
+        <p class="text-gray-600 text-base mt-2">Desempenho e Estrutura de Fiscalização das APs, Diagnóstico de Convênios de Delegação, Oferta de Janelas em Terminais de Contêineres, Tratamento de Resíduos e Produtos Perigosos, Recolhimento de Resíduos na Navegação Interior e Gratuidade em Serviços Expressos/Diferenciados.</p>
       </div>
     </div>
     <div class="delivery-item">
@@ -109,8 +109,8 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
         <i class="fas fa-check text-green-600"></i>
       </div>
       <div>
-        <p class="font-montserrat font-bold text-brand text-2xl">Grupos Especializados de Fiscalização</p>
-        <p class="text-gray-600 text-xl mt-3">GEF Investimentos e GEF Contêineres formalizados — equipes dedicadas para acompanhamento técnico contínuo.</p>
+        <p class="font-montserrat font-bold text-brand text-xl">Grupos Especializados de Fiscalização</p>
+        <p class="text-gray-600 text-base mt-2">GEF Investimentos e GEF Contêineres formalizados — equipes dedicadas para acompanhamento técnico contínuo.</p>
       </div>
     </div>
     <div class="delivery-item">
@@ -118,8 +118,8 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
         <i class="fas fa-cogs text-accent"></i>
       </div>
       <div>
-        <p class="font-montserrat font-bold text-brand text-2xl">Metodologias em Desenvolvimento</p>
-        <p class="text-gray-600 text-xl mt-3">Metodologia de Contratos de Arrendamento, Manuais de Fiscalização Conjunta das APs e Manual de Tomada de Contas iniciados.</p>
+        <p class="font-montserrat font-bold text-brand text-xl">Metodologias em Desenvolvimento</p>
+        <p class="text-gray-600 text-base mt-2">Metodologia de Contratos de Arrendamento e Manual de Fiscalização Conjunta da Autoridade Portuária de Santos concluído.</p>
       </div>
     </div>
     <div class="delivery-item">
@@ -127,8 +127,17 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
         <i class="fas fa-laptop-code text-accent"></i>
       </div>
       <div>
-        <p class="font-montserrat font-bold text-brand text-2xl">Avanço em Sistemas de TI</p>
-        <p class="text-gray-600 text-xl mt-3">Início da concepção do SisPAT (Inventário de Bens e Bens Reversíveis) e levantamento de requisitos para SAI (Acompanhamento de Investimentos).</p>
+        <p class="font-montserrat font-bold text-brand text-xl">Avanço em Sistemas de TI</p>
+        <p class="text-gray-600 text-base mt-2">Início da concepção do SisPAT (Inventário de Bens e Bens Reversíveis) e levantamento de requisitos para SAI (Acompanhamento de Investimentos).</p>
+      </div>
+    </div>
+    <div class="delivery-item" style="grid-column: span 2;">
+      <div class="w-14 h-14 rounded-lg bg-green-100 flex items-center justify-center flex-shrink-0">
+        <i class="fas fa-anchor text-green-600"></i>
+      </div>
+      <div>
+        <p class="font-montserrat font-bold text-brand text-xl">Fiscalização de Contratos de Dragagem</p>
+        <p class="text-gray-600 text-base mt-2">Acompanhamento semestral dos parâmetros operacionais de calado e contratos de dragagem em todos os Portos Organizados, com relatório consolidado à Diretoria Colegiada — em cumprimento ao Voto D3 (Acórdão 667/2023) e formalizado pela ODSE 20/2025/SFC.</p>
       </div>
     </div>
   </div>
