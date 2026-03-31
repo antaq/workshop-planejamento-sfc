@@ -232,5 +232,6 @@ document.querySelectorAll('.card-slider').forEach(slider => {
   setTimeout(() => { timer = setInterval(next, 4000); }, delay);
 });
 </script>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>
 </html>

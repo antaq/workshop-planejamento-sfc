@@ -111,5 +111,6 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     <img src="assets/logo-antaq-branca-vertical.png" alt="" style="height:400px;">
   </div>
 </div>
+<script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
 </body>
 </html>

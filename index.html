@@ -145,6 +145,17 @@
       else if (e.key === 'f' || e.key === 'F') { toggleFullscreen(); }
     });
 
+    window.addEventListener('message', (e) => {
+      if (e.data && e.data.type === 'slide-nav') {
+        const key = e.data.key;
+        if (key === 'ArrowRight' || key === ' ' || key === 'PageDown') next();
+        else if (key === 'ArrowLeft' || key === 'PageUp') prev();
+        else if (key === 'Home') { current = 1; render(); }
+        else if (key === 'End') { current = total; render(); }
+        else if (key === 'f' || key === 'F') toggleFullscreen();
+      }
+    });
+
     render();
 
     const stage = document.querySelector('.stage');
