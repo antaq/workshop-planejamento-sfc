@@ -122,6 +122,12 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
         <video src="assets/oiapoque/oiapoque-04.webm" muted playsinline></video>
         <video src="assets/oiapoque/oiapoque-05.webm" muted playsinline></video>
         <video src="assets/oiapoque/oiapoque-06.webm" muted playsinline></video>
+        <img src="assets/oiapoque/oiapoque-07.jpeg" alt="Oiapoque">
+        <img src="assets/oiapoque/oiapoque-08.jpeg" alt="Oiapoque">
+        <img src="assets/oiapoque/oiapoque-09.jpeg" alt="Oiapoque">
+        <img src="assets/oiapoque/oiapoque-10.jpeg" alt="Oiapoque">
+        <img src="assets/oiapoque/oiapoque-11.jpeg" alt="Oiapoque">
+        <img src="assets/oiapoque/oiapoque-12.jpeg" alt="Oiapoque">
         <div class="absolute top-4 left-4 z-10">
           <span class="location-badge" style="background:rgba(34,197,94,0.2); color:#4ADE80;"><i class="fas fa-map-marker-alt"></i> AP</span>
         </div>
@@ -210,7 +216,7 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 document.querySelectorAll('.card-slider').forEach(slider => {
   const items = slider.querySelectorAll('img, video');
   const hasVideo = slider.querySelectorAll('video').length > 0;
-  const interval = hasVideo ? 10000 : 4000;
+  function intervalFor(idx) { return items[idx].tagName === 'VIDEO' ? 10000 : 4000; }
   const dotsContainer = slider.querySelector('.slider-dots');
   let current = 0;
   let timer;
@@ -242,8 +248,8 @@ document.querySelectorAll('.card-slider').forEach(slider => {
   }
 
   function resetTimer() {
-    clearInterval(timer);
-    timer = setInterval(next, interval);
+    clearTimeout(timer);
+    timer = setTimeout(next, intervalFor(current));
   }
 
   // Start first video if applicable
@@ -254,7 +260,7 @@ document.querySelectorAll('.card-slider').forEach(slider => {
 
   // Stagger start so cards don't all transition at once
   const delay = Math.random() * 2000;
-  setTimeout(() => { timer = setInterval(next, interval); }, delay);
+  setTimeout(() => { timer = setTimeout(next, intervalFor(current)); }, delay);
 });
 </script>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
