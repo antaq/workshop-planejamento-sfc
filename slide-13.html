@@ -32,7 +32,8 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   cursor: pointer;
 }
-.card-slider img {
+.card-slider img,
+.card-slider video {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
@@ -40,7 +41,8 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
   opacity: 0;
   transition: opacity 0.8s ease;
 }
-.card-slider img.active {
+.card-slider img.active,
+.card-slider video.active {
   opacity: 1;
 }
 .slider-dots {
@@ -114,11 +116,12 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
     <!-- Oiapoque -->
     <div class="location-card">
       <div class="card-slider" data-slider="oiapoque">
-        <img src="assets/oiapoque/oiapoque-01.jpeg" class="active" alt="Oiapoque">
-        <img src="assets/oiapoque/oiapoque-02.jpeg" alt="Oiapoque">
-        <img src="assets/oiapoque/oiapoque-03.jpeg" alt="Oiapoque">
-        <img src="assets/oiapoque/oiapoque-04.jpeg" alt="Oiapoque">
-        <img src="assets/oiapoque/oiapoque-05.jpeg" alt="Oiapoque">
+        <video src="assets/oiapoque/oiapoque-01.webm" class="active" muted playsinline></video>
+        <video src="assets/oiapoque/oiapoque-02.webm" muted playsinline></video>
+        <video src="assets/oiapoque/oiapoque-03.webm" muted playsinline></video>
+        <video src="assets/oiapoque/oiapoque-04.webm" muted playsinline></video>
+        <video src="assets/oiapoque/oiapoque-05.webm" muted playsinline></video>
+        <video src="assets/oiapoque/oiapoque-06.webm" muted playsinline></video>
         <div class="absolute top-4 left-4 z-10">
           <span class="location-badge" style="background:rgba(34,197,94,0.2); color:#4ADE80;"><i class="fas fa-map-marker-alt"></i> AP</span>
         </div>
@@ -199,13 +202,15 @@ body { margin:0; padding:0; overflow:hidden; font-family:'Open Sans',sans-serif;
 
 <script>
 document.querySelectorAll('.card-slider').forEach(slider => {
-  const imgs = slider.querySelectorAll('img');
+  const items = slider.querySelectorAll('img, video');
+  const hasVideo = slider.querySelectorAll('video').length > 0;
+  const interval = hasVideo ? 10000 : 4000;
   const dotsContainer = slider.querySelector('.slider-dots');
   let current = 0;
   let timer;
 
   // Create dots
-  imgs.forEach((_, i) => {
+  items.forEach((_, i) => {
     const dot = document.createElement('span');
     if (i === 0) dot.classList.add('active');
     dot.addEventListener('click', e => { e.stopPropagation(); goTo(i); });
@@ -214,29 +219,36 @@ document.querySelectorAll('.card-slider').forEach(slider => {
   const dots = dotsContainer.querySelectorAll('span');
 
   function goTo(idx) {
-    imgs[current].classList.remove('active');
+    const prev = items[current];
+    prev.classList.remove('active');
+    if (prev.tagName === 'VIDEO') { prev.pause(); prev.currentTime = 0; }
     dots[current].classList.remove('active');
     current = idx;
-    imgs[current].classList.add('active');
+    const curr = items[current];
+    curr.classList.add('active');
+    if (curr.tagName === 'VIDEO') { curr.currentTime = 0; curr.play(); }
     dots[current].classList.add('active');
     resetTimer();
   }
 
   function next() {
-    goTo((current + 1) % imgs.length);
+    goTo((current + 1) % items.length);
   }
 
   function resetTimer() {
     clearInterval(timer);
-    timer = setInterval(next, 4000);
+    timer = setInterval(next, interval);
   }
+
+  // Start first video if applicable
+  if (hasVideo && items[0].tagName === 'VIDEO') items[0].play();
 
   // Click on slider advances to next
   slider.addEventListener('click', () => next());
 
   // Stagger start so cards don't all transition at once
   const delay = Math.random() * 2000;
-  setTimeout(() => { timer = setInterval(next, 4000); }, delay);
+  setTimeout(() => { timer = setInterval(next, interval); }, delay);
 });
 </script>
 <script>document.addEventListener("keydown",function(e){if(["ArrowRight","ArrowLeft","PageDown","PageUp","Home","End"," ","f","F"].indexOf(e.key)!==-1){e.preventDefault();window.parent.postMessage({type:"slide-nav",key:e.key},"*");}});</script>
