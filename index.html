@@ -102,7 +102,8 @@
     const frame = document.getElementById('slideFrame');
     let current = 1;
 
-    function fileFor(n) { return `slide-${String(n).padStart(2,'0')}.html`; }
+    const cacheBust = `v=${Date.now()}`;
+    function fileFor(n) { return `slide-${String(n).padStart(2,'0')}.html?${cacheBust}`; }
 
     function render() {
       frame.src = fileFor(current);
